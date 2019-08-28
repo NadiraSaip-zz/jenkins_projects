@@ -16,9 +16,9 @@ node{
         sh "echo Hello"
     }
     stage("Pip Install"){
-        sh "pip install -r requirements.txt"
+        sh "ssh ec2_user@${Enviroment} pip install -r ~/flask-examples/requirements.txt"
     }
     stage("Run App"){
-        sh "python /tmp/venv/01-hello-world/hello.py"
+        sh "ssh ec2_user@${Enviroment} python ~/flask-examples/01-hello-world/hello.py"
     }
 }
