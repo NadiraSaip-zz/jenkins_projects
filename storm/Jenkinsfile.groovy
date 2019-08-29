@@ -9,6 +9,8 @@ node{
     }
     stage("Delete repo"){
         sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/stormpath-flask-sample "
+    stage("Kill PID"){
+        sh "ssh  ec2-user@${ENVIR} sudo kill $(sudo lsof -i:5000   | awk '{print $2}' | grep [[:digit:]]) "
     }
     stage("Pull Repo"){
         sh "ssh centos@${ENVIR} git clone https://github.com/NadiraSaip/stormpath-flask-sample.git "
