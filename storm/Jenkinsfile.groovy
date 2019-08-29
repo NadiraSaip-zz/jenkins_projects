@@ -18,7 +18,7 @@ node{
         // sh "ssh centos@${ENVIR} sudo pip install -r /home/centos/stormpath-flask-sample/requirements.txt"
     }
     stage("Run App"){
-        sh "ssh centos@${ENVIR} sudo python /home/centos/storm/app.py"
+        sh "ssh centos@${ENVIR} sudo python /home/centos/stormpath-flask-sample/app.py"
     }
 }
 
