@@ -20,7 +20,7 @@ node{
         sh "echo Hello"
     }
     stage("Pip Install"){
-        sh "ssh centos@${ENVIR} sudo pip install -r /home/centos/flaskex/requirements.txt"
+        // sh "ssh centos@${ENVIR} sudo pip install -r /home/centos/flaskex/requirements.txt"
     }
     stage("Run App"){
         sh "ssh qcentos@${ENVIR} sudo python /home/centos/flaskex/app.py"
