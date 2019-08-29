@@ -8,7 +8,7 @@ node{
         // sh "ssh centos@${ENVIR} sudo pip install --upgrade pip"
     }
     stage("Pull Repo"){
-        sh "ssh centos@${ENVIR} git clone https://github.com/NadiraSaip/stormpath-flask-sample.git 2> /dev/null"
+        sh "ssh centos@${ENVIR} git clone https://github.com/NadiraSaip/stormpath-flask-sample.git "
 
     }
     stage("Install Requirements"){
