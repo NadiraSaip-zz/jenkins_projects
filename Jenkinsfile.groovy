@@ -7,7 +7,7 @@ node{
         sh "ssh centos@${ENVIR} sudo yum install git python-pip -y"
     }
     stage("Remove Repo"){
-        sh "ssh centos@${ENVIR} sudo rm -rf /home/ec2-user/flask-examples"
+        sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/flask-examples"
     }
     stage("Pull Repo"){
         sh "ssh centos@${ENVIR} git clone https://github.com/miguelgrinberg/flask-examples.git"
@@ -25,3 +25,4 @@ node{
         sh "centos@${ENVIR} python /home/flask-examples/01-hello-world/hello.py"
     }
 }
+
