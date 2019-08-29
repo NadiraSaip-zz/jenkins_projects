@@ -4,8 +4,8 @@ node{
           sh "echo Parameter added"
     }
     stage("Install git"){
-        sh "ssh centos@${ENVIR} sudo yum install git epel-release python-pip -y"
-        sh "ssh centos@${ENVIR} sudo pip install --upgrade pip"
+        sh "ssh centos@${ENVIR} sudo yum install git epel-release python python-pip -y"
+        // sh "ssh centos@${ENVIR} sudo pip install --upgrade pip"
     }
     stage("Remove Repo"){
         sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/flask-examples"
