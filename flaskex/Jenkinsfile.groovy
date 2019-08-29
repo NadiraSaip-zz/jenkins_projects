@@ -8,7 +8,7 @@ node{
         // sh "ssh centos@${ENVIR} sudo pip install --upgrade pip"
     }
     stage("Remove Repo"){
-        sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/flask-examples"
+        sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/Flaskex"
     }
     stage("Pull Repo"){
         sh "ssh centos@${ENVIR} git clone https://github.com/anfederico/Flaskex.git"
