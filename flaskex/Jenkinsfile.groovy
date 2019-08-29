@@ -8,10 +8,10 @@ node{
         sh "ssh centos@${ENVIR} pip install --upgrade pip"
     }
     stage("Remove Repo"){
-        sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/flask-examples"
+        //sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/flask-examples"
     }
     stage("Pull Repo"){
-        sh "ssh centos@${ENVIR} git clone https://github.com/NadiraSaip/flask-examples.git"
+        sh "ssh centos@${ENVIR} git clone https://github.com/anfederico/Flaskex.git"
 
     }
     stage("Install Requirements"){
@@ -20,10 +20,10 @@ node{
         sh "echo Hello"
     }
     stage("Pip Install"){
-        sh "ssh centos@${ENVIR} pip install -r /home/centos/flask-examples/requirements.txt"
+        sh "ssh centos@${ENVIR} pip install -r /home/centos/flaskex/requirements.txt"
     }
     stage("Run App"){
-        sh "ssh qcentos@${ENVIR} python /home/centos/flask-examples/01-hello-world/hello.py"
+        sh "ssh qcentos@${ENVIR} python /home/centos/flaskex/app.py"
     }
 }
 
