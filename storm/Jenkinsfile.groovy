@@ -7,6 +7,9 @@ node{
         sh "ssh centos@${ENVIR} sudo yum install git epel-release python python-pip -y"
         // sh "ssh centos@${ENVIR} sudo pip install --upgrade pip"
     }
+    stage("Delete repo"){
+        sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/stormpath-flask-sample "
+    }
     stage("Pull Repo"){
         sh "ssh centos@${ENVIR} git clone https://github.com/NadiraSaip/stormpath-flask-sample.git "
 
