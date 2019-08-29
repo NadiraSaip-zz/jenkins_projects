@@ -19,10 +19,10 @@ node{
         sh "echo Hello"
     }
     stage("Pip Install"){
-        sh "centos@${ENVIR} sudo pip install -r /home/flask-examples/requirements.txt"
+        sh "centos@${ENVIR} sudo pip install -r /home/centos/flask-examples/requirements.txt"
     }
     stage("Run App"){
-        sh "centos@${ENVIR} python /home/flask-examples/01-hello-world/hello.py"
+        sh "centos@${ENVIR} python /home/centos/flask-examples/01-hello-world/hello.py"
     }
 }
 
