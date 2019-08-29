@@ -4,10 +4,10 @@ node{
           sh "echo Parameter added"
     }
     stage("Install git"){
-        sh "ssh ec2_user@${ENVIR} sudo yum install git python-pip -y"
+        sh "ssh centos@${ENVIR} sudo yum install git python-pip -y"
     }
     stage("Pull Repo"){
-        sh "ssh ec2_user@${ENVIR} git clone https://github.com/miguelgrinberg/flask-examples.git"
+        sh "ssh centos@${ENVIR} git clone https://github.com/miguelgrinberg/flask-examples.git"
 
     }
     stage("Install Requirements"){
@@ -16,9 +16,9 @@ node{
         sh "echo Hello"
     }
     stage("Pip Install"){
-        sh "ssh ec2_user@${ENVIR} pip install -r /home/flask-examples/requirements.txt"
+        sh "centos@${ENVIR} sudo pip install -r /home/flask-examples/requirements.txt"
     }
     stage("Run App"){
-        sh "ssh ec2_user@${ENVIR} python /home/flask-examples/01-hello-world/hello.py"
+        sh "centos@${ENVIR} python /home/flask-examples/01-hello-world/hello.py"
     }
 }
