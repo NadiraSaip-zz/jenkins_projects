@@ -10,7 +10,7 @@ node{
         sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/flask-examples"
     }
     stage("Pull Repo"){
-        sh "ssh centos@${ENVIR} git clone https://github.com/miguelgrinberg/flask-examples.git"
+        sh "ssh centos@${ENVIR} git clone git@github.com:NadiraSaip/flask-examples.git"
 
     }
     stage("Install Requirements"){
