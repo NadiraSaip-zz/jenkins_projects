@@ -23,7 +23,7 @@ node{
         // sh "ssh centos@${ENVIR} sudo pip install -r /home/centos/flaskex/requirements.txt"
     }
     stage("Run App"){
-        sh "ssh centos@${ENVIR} sudo python /home/centos/flaskex/app.py"
+        sh "ssh centos@${ENVIR} sudo python /home/centos/Flaskex/app.py"
     }
 }
 
