@@ -7,18 +7,23 @@ node{
         sh "ssh centos@${ENVIR} sudo yum install git epel-release python python-pip -y"
         // sh "ssh centos@${ENVIR} sudo pip install --upgrade pip"
     }
+    stage("Remove Repo"){
+        sh "ssh centos@${ENVIR} sudo rm -rf /home/centos/Flaskex"
+    }
     stage("Pull Repo"){
-        sh "ssh centos@${ENVIR} git clone https://github.com/NadiraSaip/stormpath-flask-sample.git 2> /dev/null"
+        sh "ssh centos@${ENVIR} git clone https://github.com/anfederico/Flaskex.git"
 
     }
     stage("Install Requirements"){
+        //sh "virtualenv /tmp/venv"
+        //sh ". /tmp/venv/bin/activate"
         sh "echo Hello"
     }
     stage("Pip Install"){
-        // sh "ssh centos@${ENVIR} sudo pip install -r /home/centos/stormpath-flask-sample/requirements.txt"
+        // sh "ssh centos@${ENVIR} sudo pip install -r /home/centos/flaskex/requirements.txt"
     }
     stage("Run App"){
-        sh "ssh centos@${ENVIR} sudo python /home/centos/storm/app.py"
+        sh "ssh centos@${ENVIR} sudo python /home/centos/Flaskex/app.py"
     }
 }
 
